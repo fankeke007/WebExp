@@ -210,5 +210,17 @@ second tab conten
 {% endtab %}
 {% endtabs %}
 
+媒体文件
+
+{% embed data="{\"url\":\"https://codepen.io/sdras/pen/YZBGNp\",\"type\":\"rich\",\"title\":\"Vue-controlled Wall-E\",\"description\":\"I found this dribbble shot of Wall-E that I loved, and wanted to see if I could manipulate him with Vue bindings. https://dribbble.com/shots/2758895-Wa...\",\"icon\":{\"type\":\"icon\",\"url\":\"https://codepen.io/favicons/favicon-192x192.png\",\"width\":192,\"height\":192,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://s3-us-west-2.amazonaws.com/i.cdpn.io/28963.YZBGNp.small.14ebc7ae-6062-44a2-828e-ad7d5fa3242b.png\",\"width\":384,\"height\":225,\"aspectRatio\":0.5859375},\"embed\":{\"type\":\"app\",\"url\":\"https://codepen.io/sdras/embed/preview/YZBGNp?height=300&slug-hash=YZBGNp&default-tabs=html,result&host=https://codepen.io&embed-version=2\",\"html\":\"<iframe src=\\"https://codepen.io/sdras/embed/preview/YZBGNp?height=300&amp;slug-hash=YZBGNp&amp;default-tabs=html,result&amp;host=https://codepen.io&amp;embed-version=2\\" style=\\"border: 0; width: 100%; height: 300px;\\" allowfullscreen></iframe>\",\"height\":300,\"aspectRatio\":null}}" %}
+
+video
+
+{% embed data="{\"url\":\"http://ugcws.video.gtimg.com/c0662g7xb7u.p712.1.mp4?sdtfrom=v1104&guid=6446fce2ae6a38426b9b941546c56b45&vkey=F1FB6545215F23D5CEEF94D507DF09C55F6CF507D4AA57B6F16B823319816BE88D0F7245D98B3C9B8FE7808AFE93163F26ED1B26C5AAE819E7B64F73781ED087014F9145B265A96AE7142C4448D8E485F617506C78F2B91FBC98BBAB70DEB18C05E7271B948FEF7A6CB801CED361AE42CC17BD702E87F607\",\"type\":\"video\",\"embed\":{\"type\":\"player\",\"url\":\"http://ugcws.video.gtimg.com/c0662g7xb7u.p712.1.mp4?sdtfrom=v1104&guid=6446fce2ae6a38426b9b941546c56b45&vkey=F1FB6545215F23D5CEEF94D507DF09C55F6CF507D4AA57B6F16B823319816BE88D0F7245D98B3C9B8FE7808AFE93163F26ED1B26C5AAE819E7B64F73781ED087014F9145B265A96AE7142C4448D8E485F617506C78F2B91FBC98BBAB70DEB18C05E7271B948FEF7A6CB801CED361AE42CC17BD702E87F607\",\"html\":\"<div style=\\"left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;\\"><video controls style=\\"top: 0; left: 0; width: 100%; height: 100%; position: absolute;\\">Your browser does not support HTML5 video.<source src=\\"http://ugcws.video.gtimg.com/c0662g7xb7u.p712.1.mp4?sdtfrom=v1104&amp;guid=6446fce2ae6a38426b9b941546c56b45&amp;vkey=F1FB6545215F23D5CEEF94D507DF09C55F6CF507D4AA57B6F16B823319816BE88D0F7245D98B3C9B8FE7808AFE93163F26ED1B26C5AAE819E7B64F73781ED087014F9145B265A96AE7142C4448D8E485F617506C78F2B91FBC98BBAB70DEB18C05E7271B948FEF7A6CB801CED361AE42CC17BD702E87F607\\" type=\\"video/mp4\\"></video></div>\",\"aspectRatio\":0}}" %}
+
+github links
+
+ [https://github.com/fankeke007/css\_secrets/blob/master/background.css](https://github.com/fankeke007/css_secrets/blob/master/background.css)
+
 
 
