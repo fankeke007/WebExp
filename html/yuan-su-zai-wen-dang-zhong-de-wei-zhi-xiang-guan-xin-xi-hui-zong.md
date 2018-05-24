@@ -2,13 +2,26 @@
 description: 元素在文档中的位置、元素在当前视窗中的位置、元素自身的尺寸信息
 ---
 
-# 元素在文档中的位置相关信息汇总
+# 元素在文档中尺寸与位置相关信息汇总
+
+### **概览**
+
+![&#x56FE;1.&#x5143;&#x7D20;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x5C3A;&#x5BF8;&#x4E0E;&#x4F4D;&#x7F6E;&#x5173;&#x7CFB;&#x56FE;&#xFF08;MSDN&#xFF09;](../.gitbook/assets/image%20%284%29.png)
+
+图1说明：页面中主要包含3个元素：红色的div元素、蓝色div元素\(红色div的父元素\)、黑色轮廓的html元素。蓝色div主要目的是定义构成元素布局的不同级联样式表（CSS）框，以及显示如何计算**offsetTop**属性。视口是由**html**元素表示。在图中html元素没有显示任何边距或边框。但是，添加边距或边框不会改变任何测量结果。
+
+由于[**div**](https://msdn.microsoft.com/en-us/library/ms535240%28v=vs.85%29.aspx)的[**overflow**](https://msdn.microsoft.com/en-us/library/ms530824%28v=vs.85%29.aspx)属性已设置为“滚动”，并且它包含的内容数量超过了可在其有限的客户端区域内显示的内容，因此会显示滚动条。请注意，所示的值都是面向_垂直_的属性。水平取向的属性是相似的; 只需将“左”替换为“顶”，将“宽”替换为“高”，等等。
 
 > 涉及的属性与方法
 >
 > * getClientRects\(\)
 > * getBoundingClientRects\(\)
+> * getComputedStyle\(\)
 > * scrollTop
+> * offsetTop
+> * scrollHeight
+> * clientHeight
+> * offsetHeight
 
 获取文档滚动高度
 
@@ -47,4 +60,8 @@ function isBottom(el){
     return el.scrollHeight - el.scrollTop === el.clientHeight
 }
 ```
+
+使用示例：（MDN）[判断用户是否阅读过文本](https://codepen.io/pen/)
+
+
 
