@@ -63,11 +63,13 @@ function isBottom(el){
 
 **getBoundingClientRects VS** **getClientRects**
 
-**getBoundngClientRects** : 
+**getBoundngClientRects** : \(IE8+\)
 
 ![getBoundingClientRects&#x8FD4;&#x56DE;&#x503C;&#x793A;&#x610F;&#x56FE;&#xFF08;MDN&#xFF09;](../.gitbook/assets/image%20%285%29.png)
 
-top/left/right/bottom都是**基于视窗**的值（与滚动相关），width/height元素自身的宽与高。要想知道元素基于文档的位置只需加上相应的视窗滚动的位置（window.scrollY/window.scrollX ; window.pageYOffset/window.pageXOffset ; document.documentElement.scrollTop/document.documnetElement.scrollLeft）即可
+top/left/right/bottom都是**基于视窗**的值（与滚动相关），width/height元素自身的宽与高。要想知道元素基于文档的位置只需加上相应的视窗滚动的位置（**window.scrollY/window.scrollX** ; **window.pageYOffset/window.pageXOffset** ; **document.documentElement.scrollTop/document.documnetElement.scrollLeft**）即可。
+
+**getClientRects**:对于块状元素使用与getBoundingRects一致。对于行内元素，若跨多行则每一行都会返回一个DOMRect 对象，最终返回的是一个DOMRect集合。一般推荐使用getBoundingRects来获取元素相对于视窗的位置属性。
 
 
 
