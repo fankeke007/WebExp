@@ -71,5 +71,14 @@ top/left/right/bottom都是**基于视窗**的值（与滚动相关），width/h
 
 **getClientRects**:对于块状元素使用与getBoundingRects一致。对于行内元素，若跨多行则每一行都会返回一个DOMRect 对象，最终返回的是一个DOMRect集合。一般推荐使用getBoundingRects来获取元素相对于视窗的位置属性。
 
+getComputedStyle：其返回值中width和height属性，只包含内容的宽与高，不包含padding、border、margin
+
+
+
+```text
+//使用方法
+window.getComputedStyle(domObj)
+```
+
 
 
