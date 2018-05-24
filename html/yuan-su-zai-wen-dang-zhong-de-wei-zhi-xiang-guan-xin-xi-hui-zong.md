@@ -97,5 +97,16 @@ window.getComputedStyle(domObj)
 
 {% embed data="{\"url\":\"https://msdn.microsoft.com/en-us/library/hh781509\(VS.85\).aspx\",\"type\":\"link\",\"title\":\"Measuring Element Dimension and Location with CSSOM in Windows Internet Explorer 9 \(Internet Explorer\)\",\"icon\":{\"type\":\"icon\",\"url\":\"https://msdn.microsoft.com/favicon.ico\",\"aspectRatio\":0}}" %}
 
+几种常用的情况：
+
+* 获取窗口大小
+* 获取页面滚动高度
+* 判断某一元素滚动高度（及还剩多少可滚动区域）
+* 判断元素是否进入可视区（或某一相对于视窗的区域）
+* 获取元素相对于视窗的坐标
+* 获取元素相对于文档的坐标（以及与上一条两者之间的转换）
+
+
+
 
 
