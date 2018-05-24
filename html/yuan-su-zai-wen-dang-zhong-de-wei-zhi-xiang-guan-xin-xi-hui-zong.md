@@ -20,6 +20,7 @@ description: 元素在文档中的位置、元素在当前视窗中的位置、�
 > * scrollHeight
 > * clientHeight
 > * offsetHeight
+> *
 
 获取文档滚动高度\(即浏览器窗口滚动高度\)
 
@@ -28,7 +29,7 @@ description: 元素在文档中的位置、元素在当前视窗中的位置、�
 document.documentElement.scrollTop || document.body.scrollTop
 ```
 
-获取视窗（浏览器窗口）大小
+获取视窗（浏览器内容区窗口）大小
 
 ```text
 document.documentElement.clientHeight
@@ -46,7 +47,7 @@ document.documentElement.clientWidth
 Math.max(document.docuemntElement.scrollHeight,document.body.scrollHeight)
 ```
 
-scrollHeight
+**scrollHeight**
 
 一个元素内容高度的度量，包括溢出导致的视图中不可见内容（如：限制height，出现滚动条的内容高度）。 没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同。包括元素的padding，但**不包括元素的border和margin**。scrollHeight也包括 [`::before`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::before) 和 [`::after`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::after)这样的伪元素。
 
@@ -89,6 +90,12 @@ top/left/right/bottom都是**基于视窗**的值（与滚动相关），width/h
 //使用方法
 window.getComputedStyle(domObj)
 ```
+
+参考链接：
+
+{% embed data="{\"url\":\"https://developer.mozilla.org/zh-CN/docs/Web/API/CSS\_Object\_Model/Determining\_the\_dimensions\_of\_elements\",\"type\":\"link\",\"title\":\"Determining the dimensions of elements\",\"description\":\"当想要确认元素的宽高时有几种属性可以选择，但是我们很难确认使用哪个属性才是最适合的。本文将帮助你做出正确的选择。\",\"icon\":{\"type\":\"icon\",\"url\":\"https://developer.mozilla.org/static/img/favicon144.e7e21ca263ca.png\",\"width\":144,\"height\":144,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png\",\"width\":600,\"height\":600,\"aspectRatio\":1}}" %}
+
+{% embed data="{\"url\":\"https://msdn.microsoft.com/en-us/library/hh781509\(VS.85\).aspx\",\"type\":\"link\",\"title\":\"Measuring Element Dimension and Location with CSSOM in Windows Internet Explorer 9 \(Internet Explorer\)\",\"icon\":{\"type\":\"icon\",\"url\":\"https://msdn.microsoft.com/favicon.ico\",\"aspectRatio\":0}}" %}
 
 
 
