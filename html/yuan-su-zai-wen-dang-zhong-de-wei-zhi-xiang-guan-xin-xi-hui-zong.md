@@ -40,7 +40,7 @@ Math.max(document.docuemntElement.scrollHeight,document.body.scrollHeight)
 
 scrollHeight
 
-一个元素内容高度的度量，包括溢出导致的视图中不可见内容（如：限制height，出现滚动条的内容高度）。 没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同。包括元素的padding，但不包括元素的border和margin。scrollHeight也包括 [`::before`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::before) 和 [`::after`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::after)这样的伪元素。
+一个元素内容高度的度量，包括溢出导致的视图中不可见内容（如：限制height，出现滚动条的内容高度）。 没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同。包括元素的padding，但**不包括元素的border和margin**。scrollHeight也包括 [`::before`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::before) 和 [`::after`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::after)这样的伪元素。
 
 ![&#x4E0D;&#x5305;&#x542B;border&#x548C;margin&#x503C;](../.gitbook/assets/image%20%283%29.png)
 
@@ -63,11 +63,11 @@ function isBottom(el){
 
 **getBoundingClientRects VS** **getClientRects**
 
-**getBoundngClientRects** : 
+**getBoundngClientRects** : \(IE8+\)
 
 ![getBoundingClientRects&#x8FD4;&#x56DE;&#x503C;&#x793A;&#x610F;&#x56FE;&#xFF08;MDN&#xFF09;](../.gitbook/assets/image%20%285%29.png)
 
-top/left/right/bottom都是**基于视窗**的值（与滚动相关），width/height元素自身的宽与高。要想知道元素基于文档的位置只需加上相应的视窗滚动的位置（**window.scrollY/window.scrollX** ; **window.pageYOffset/window.pageXOffset** ; **document.documentElement.scrollTop/document.documnetElement.scrollLeft**）即可。
+top/left/right/bottom都是**基于视窗**的值（与滚动相关），width/height元素自身的宽与高\(含border，不含margin\)。要想知道元素基于文档的位置只需加上相应的视窗滚动的位置（**window.scrollY/window.scrollX** ; **window.pageYOffset/window.pageXOffset** ; **document.documentElement.scrollTop/document.documnetElement.scrollLeft**）即可。
 
 **getClientRects**:对于块状元素使用与getBoundingRects一致。对于行内元素，若跨多行则每一行都会返回一个DOMRect 对象，最终返回的是一个DOMRect集合。一般推荐使用getBoundingRects来获取元素相对于视窗的位置属性。
 
