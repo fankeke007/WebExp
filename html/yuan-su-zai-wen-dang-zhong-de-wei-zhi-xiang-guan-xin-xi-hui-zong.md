@@ -63,7 +63,7 @@ function isBottom(el){
 
 **getBoundingClientRects VS** **getClientRects**
 
-**getBoundngClientRects** : \(IE8+\)
+**getBoundngClientRects** : 
 
 ![getBoundingClientRects&#x8FD4;&#x56DE;&#x503C;&#x793A;&#x610F;&#x56FE;&#xFF08;MDN&#xFF09;](../.gitbook/assets/image%20%285%29.png)
 
