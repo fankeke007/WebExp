@@ -21,7 +21,7 @@ description: 元素在文档中的位置、元素在当前视窗中的位置、�
 > * clientHeight
 > * offsetHeight
 
-获取文档滚动高度
+获取文档滚动高度\(即浏览器窗口滚动高度\)
 
 ```javascript
 /*document.body.scrollTop 在页面不存在DTD声明时有用*/
@@ -29,6 +29,14 @@ document.documentElement.scrollTop || document.body.scrollTop
 ```
 
 获取视窗（浏览器窗口）大小
+
+```text
+document.documentElement.clientHeight
+document.documentElement.clientWidth
+
+//document.body.clientHeight 会获取整个文档的高度其值和document.documentElement.scrollHeight值接近
+//存在的差异主要在于margin
+```
 
 
 
@@ -63,17 +71,19 @@ function isBottom(el){
 
 **getBoundingClientRects VS** **getClientRects**
 
-**getBoundngClientRects** : \(IE8+\)
+#### **getBoundngClientRects** : \(IE8+\)
 
 ![getBoundingClientRects&#x8FD4;&#x56DE;&#x503C;&#x793A;&#x610F;&#x56FE;&#xFF08;MDN&#xFF09;](../.gitbook/assets/image%20%285%29.png)
 
 top/left/right/bottom都是**基于视窗**的值（与滚动相关），width/height元素自身的宽与高\(含border，不含margin\)。要想知道元素基于文档的位置只需加上相应的视窗滚动的位置（**window.scrollY/window.scrollX** ; **window.pageYOffset/window.pageXOffset** ; **document.documentElement.scrollTop/document.documnetElement.scrollLeft**）即可。
 
-**getClientRects**:对于块状元素使用与getBoundingRects一致。对于行内元素，若跨多行则每一行都会返回一个DOMRect 对象，最终返回的是一个DOMRect集合。一般推荐使用getBoundingRects来获取元素相对于视窗的位置属性。
+#### **getClientRects**:
 
-getComputedStyle：其返回值中width和height属性，只包含内容的宽与高，不包含padding、border、margin
+对于块状元素使用与getBoundingRects一致。对于行内元素，若跨多行则每一行都会返回一个DOMRect 对象，最终返回的是一个DOMRect集合。一般推荐使用getBoundingRects来获取元素相对于视窗的位置属性。
 
+#### **getComputedStyle**：**\(IE9+\)**
 
+其返回值中width和height属性，只包含内容的宽与高，不包含padding、border、margin
 
 ```text
 //使用方法
