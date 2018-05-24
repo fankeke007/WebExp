@@ -42,7 +42,7 @@ document.documentElement  和 document.body 的尺寸在什么时候不一样？
 ```javascript
 //el:dom元素
 //return:Boolean
-//TODO：新增distance参数，判断距离底部多元
+//TODO：新增distance参数，判断距离底部多远
 function isBottom(el){
     return el.scrollHeight - el.scrollTop === el.clientHeight
 }
