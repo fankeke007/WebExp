@@ -54,7 +54,9 @@ a[4]();//4
 **3.注意事项**
 
 {% hint style="danger" %}
-es6 明确规定，若在区块中存在let 、const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域，凡在声明之前就使用这些变量，就会报错。
+1.  es6 明确规定，若在区块中存在let 、const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域，凡在声明之前就使用这些变量，就会报错。
+2.  let 不许在相同作用域内声明同一个变量
+3. 块级作用域中函数的定义在es5 和 es6 中差异较大，详见[块级作用域与函数声明](http://es6.ruanyifeng.com/#docs/let#%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E)。推荐在es6 浏览器环境下使用**函数表达式**，而不是函数声明。
 {% endhint %}
 
 ```javascript
@@ -66,7 +68,7 @@ es6 明确规定，若在区块中存在let 、const 命令，这个区块对这
 	}
 })(2)
 
-// let
+// let 情形
 (function(a){
 	return function scop(){
 		console.log(a);  //ReferenceError
@@ -75,7 +77,7 @@ es6 明确规定，若在区块中存在let 、const 命令，这个区块对这
 	}
 })(2)
 
-//var
+//var 情形
 (function(a){
 	return function scop(){
 		console.log(a);  //undefiend
@@ -84,4 +86,6 @@ es6 明确规定，若在区块中存在let 、const 命令，这个区块对这
 	}
 })(2)
 ```
+
+
 
