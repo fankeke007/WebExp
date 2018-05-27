@@ -7,4 +7,7 @@
 * [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
 * HTML
   * [元素在文档中尺寸与位置相关信息汇总](html/yuan-su-zai-wen-dang-zhong-de-wei-zhi-xiang-guan-xin-xi-hui-zong.md)
+* JavaScript
+  * es6 语法速览
+    * [let](javascript/es6-yu-fa-su-lan/let.md)
 
