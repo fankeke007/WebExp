@@ -30,6 +30,7 @@ let [e,f,g] = new Set([1,3,4]);
 e;//1
 
 //事实上只要某种数据结构具有Iterator接口，就可以采用数组结构赋值
+//生成器（generator）
 function* fib(){
     let a = 0;
     let b = 1;
