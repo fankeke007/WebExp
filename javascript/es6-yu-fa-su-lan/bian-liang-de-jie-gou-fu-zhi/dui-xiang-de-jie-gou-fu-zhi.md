@@ -45,9 +45,11 @@ let x;
 let {log,sin,cos} = Math;
 
 //对数组进行对象解构赋值
-//注意 [arr.length-1]:last 的写法
+//注意 [arr.length-1]:last 的写法：属性名表达式
 let arr = [1,2,3];
 let {0:first,[arr.length-1]:last} = arr;
 
 ```
+
+
 
