@@ -12,4 +12,5 @@
     * [let](javascript/es6-yu-fa-su-lan/let.md)
     * [const](javascript/es6-yu-fa-su-lan/const.md)
     * [获取顶层对象（global / window / self）](javascript/es6-yu-fa-su-lan/huo-qu-ding-ceng-dui-xiang-global-window-self.md)
+    * [变量的结构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi.md)
 
