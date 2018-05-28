@@ -16,4 +16,6 @@
       * [数组的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/shu-zu-de-jie-gou-fu-zhi.md)
       * [对象的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/dui-xiang-de-jie-gou-fu-zhi.md)
       * [字符串的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/zi-fu-chuan-de-jie-gou-fu-zhi.md)
+      * [数值和布尔值的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/shu-zhi-he-bu-er-zhi-de-jie-gou-fu-zhi.md)
+      * [函数参数的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/untitled.md)
 
