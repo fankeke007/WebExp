@@ -41,5 +41,9 @@ var constantize = obj =>{
 }
 ```
 
+> **es6 声明变量的6种方法**
+>
+> es5 只有两种声明变量的方法：var 和 function 。es6 新添加了 let 、const、import、class 命令。
+
 
 
