@@ -15,4 +15,5 @@
     * [变量的结构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/README.md)
       * [数组的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/shu-zu-de-jie-gou-fu-zhi.md)
       * [对象的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/dui-xiang-de-jie-gou-fu-zhi.md)
+      * [字符串的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/zi-fu-chuan-de-jie-gou-fu-zhi.md)
 
