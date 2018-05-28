@@ -14,4 +14,5 @@
     * [获取顶层对象（global / window / self）](javascript/es6-yu-fa-su-lan/huo-qu-ding-ceng-dui-xiang-global-window-self.md)
     * [变量的结构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/README.md)
       * [数组的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/shu-zu-de-jie-gou-fu-zhi.md)
+      * [对象的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/dui-xiang-de-jie-gou-fu-zhi.md)
 
