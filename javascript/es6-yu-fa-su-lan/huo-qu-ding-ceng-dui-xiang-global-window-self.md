@@ -39,7 +39,7 @@ es5 的顶层对象，本身也是一个问题，因为他在各种实现里面�
 *  函数里面的this，若函数不做对象方法运行，而是单纯作为函数运行，this 会指向顶层对象。但是在严格模式下，this 会返回 undefined。
 * 不管是严格模式还是普通模式，new Function\(' return this '\)\(\),总会返回全局对象，但是浏览器若启用了CSP（内容安全策略），那么eval 和 new Function这些方法可能无法使用。
 
-两种折中的在所有环境下获取全局（顶层）对象的方法：
+**两种折中的在所有环境下获取全局（顶层）对象的方法**：
 
 ```javascript
 //方法一
@@ -57,4 +57,10 @@ var getGlobal = function(){
     throw new Error('unable to locate global object');
 }
 ```
+
+{% hint style="info" %}
+现有一提案，在语言标准层面，引入global作为顶层对象，也就是在所有情况下，global 都是存在的，都可以从它拿到顶层对象。
+
+**system.global** ployfill/shim 模拟了这个提案可以在所有环境拿到global。
+{% endhint %}
 
