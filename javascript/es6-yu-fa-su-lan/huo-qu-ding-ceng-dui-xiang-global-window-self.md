@@ -61,6 +61,8 @@ var getGlobal = function(){
 {% hint style="info" %}
 现有一提案，在语言标准层面，引入global作为顶层对象，也就是在所有情况下，global 都是存在的，都可以从它拿到顶层对象。
 
-**system.global** ployfill/shim 模拟了这个提案可以在所有环境拿到global。
+**system.global** ployfill/shim 模拟了这个提案可以在所有环境拿到**global**。
 {% endhint %}
+
+
 
