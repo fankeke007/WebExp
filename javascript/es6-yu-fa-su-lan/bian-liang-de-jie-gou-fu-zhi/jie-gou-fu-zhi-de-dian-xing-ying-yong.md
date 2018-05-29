@@ -74,8 +74,27 @@ const map = new Map();
 map.set('first','hello');
 map.set('second','world');
 
+//同时获取键与值
 for (let [key,value] of map){
     console.log(key + ' is ' + value);
 }
+
+//只获取键
+for (let [key] of map){
+    console.log(key);
+}
+
+//只获取值
+for (let [,value] of map){
+    console.log(value);
+}
 ```
+
+**7.获取模块的指定方法**
+
+```javascript
+const {SourceMapConsumer,SourceNode} = require('source-map');
+```
+
+
 
