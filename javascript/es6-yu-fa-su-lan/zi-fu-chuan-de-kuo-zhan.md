@@ -116,6 +116,17 @@ let template = `
 `;
 
 //如何编译template
-//思路1：转换为js表达式字符串
+//思路1：利用正则转换为js表达式字符串
+/****************************
+echo('<ul>');
+for(let i=0;i<data.supplies.length;i++){
+    echo('<li>');
+    echo(data.supplies[i]);
+    echo('</li>');
+};
+echo('</ul>');
+****************************/
+
+
 ```
 
