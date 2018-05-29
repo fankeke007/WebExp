@@ -19,5 +19,5 @@
       * [数值和布尔值的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/shu-zhi-he-bu-er-zhi-de-jie-gou-fu-zhi.md)
       * [函数参数的解构赋值](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/untitled.md)
       * [圆括号在解构中的问题](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/yuan-kuo-hao-zai-jie-gou-zhong-de-wen-ti.md)
-      * 解构赋值的典型应用
+      * [解构赋值的典型应用](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/jie-gou-fu-zhi-de-dian-xing-ying-yong.md)
 
