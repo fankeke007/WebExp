@@ -155,3 +155,7 @@ function compile(template){
 let parse = eval(compile(template));div.innerHTML = parse({ supplies: [ "broom", "mop", "cleaner" ] });
 ```
 
+{% hint style="danger" %}
+注意：**template.replace\(expr,$1\);  与  template.replace\(expr,\`$1\`\);的区别**
+{% endhint %}
+
