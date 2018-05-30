@@ -169,3 +169,17 @@ let parse = eval(compile(template));div.innerHTML = parse({ supplies: [ "broom",
 /***************************//先熟悉标签模板的参数规则alert`123`// 等同于alert(123)----------------------------let a = 5;let b = 10;tag`Hello ${ a + b } world ${ a * b }`;// 等同于tag(['Hello ', ' world ', ''], 15, 50);***************************/let message =  SaferHTML`<p>${sender} has sent you a message.</p>`;function SaferHTML(templateData) {  let s = templateData[0];  for (let i = 1; i < arguments.length; i++) {    let arg = String(arguments[i]);    // Escape special characters in the substitution.    s += arg.replace(/&/g, "&amp;")            .replace(/</g, "&lt;")            .replace(/>/g, "&gt;");    // Don't escape special characters in the template.    s += templateData[i];  }  return s;}
 ```
 
+14.String.raw
+
+功能类似于python中的字符串前缀 **r** 和 C\# 中的字符串前缀**@**，用来获取一个模板字符串的原始字面量。
+
+```javascript
+//两种用法，但一般只用第二种
+String.raw(callSite,...substitutions);//一般不会用到这种形式
+String.raw`templateString`;
+//示例
+String.raw `Hi\u000A!`;             // "Hi\\u000A!"
+```
+
+
+
