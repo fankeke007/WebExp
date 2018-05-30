@@ -61,7 +61,7 @@ var m1 = new Vue({
 
 图片示例：图片默认只能居中显示，且只能是块状显示，不能行内显示（后续版本会改进行内显示）
 
-![&#x56FE;&#x7247;&#x9ED8;&#x8BA4;&#x53EA;&#x80FD;&#x5C45;&#x4E2D;&#x663E;&#x793A;](.gitbook/assets/image.png)
+![&#x56FE;&#x7247;&#x9ED8;&#x8BA4;&#x53EA;&#x80FD;&#x5C45;&#x4E2D;&#x663E;&#x793A;](.gitbook/assets/image%20%281%29.png)
 
 表格示例：（remove 操作时要注意会删掉整个表格）
 
