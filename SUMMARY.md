@@ -3,7 +3,6 @@
 * [概述](README.md)
 * HTML
   * [元素在文档中尺寸与位置相关信息汇总](html/yuan-su-zai-wen-dang-zhong-de-wei-zhi-xiang-guan-xin-xi-hui-zong.md)
-* [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
 * JavaScript
   * [es6 语法速览](javascript/es6-yu-fa-su-lan/README.md)
     * [let](javascript/es6-yu-fa-su-lan/let.md)
@@ -18,6 +17,7 @@
       * [圆括号在解构中的问题](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/yuan-kuo-hao-zai-jie-gou-zhong-de-wen-ti.md)
       * [解构赋值的典型应用](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/jie-gou-fu-zhi-de-dian-xing-ying-yong.md)
     * [字符串的扩展](javascript/es6-yu-fa-su-lan/zi-fu-chuan-de-kuo-zhan.md)
+* [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
 * CSS
   * [CSS中的绝对定位](css/css-zhong-de-jue-dui-ding-wei.md)
 

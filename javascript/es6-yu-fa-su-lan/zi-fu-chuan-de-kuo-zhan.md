@@ -129,13 +129,15 @@ echo('</ul>');
 
 function compile(template){
     const evalExpr = /<%=(.+?)%>/g;
-    const expr = /<%(\s\S+?)%>/g;
+    //const expr = /<%(\s\S+?)%>/g;//无法完成匹配
+    const expr = /<%(\s+?.+?)%>/g;
     
     template = template
     .replace(evalExpr,'`); \n echo($1); \n echo(`')
     .replace(expr,'`); \n $1 \n echo(`');
     
     template = 'echo(`'+template+'`);';
+    console.log(template);
     
     let script =
     `(function parse(data){
@@ -148,5 +150,8 @@ function compile(template){
     })`;
     return script;
 }
+
+
+let parse = eval(compile(template));div.innerHTML = parse({ supplies: [ "broom", "mop", "cleaner" ] });
 ```
 
