@@ -157,5 +157,7 @@ let parse = eval(compile(template));div.innerHTML = parse({ supplies: [ "broom",
 
 {% hint style="danger" %}
 注意：**template.replace\(expr,$1\);  与  template.replace\(expr,\`$1\`\);的区别**
+
+第二个也可以写为**template.replace\(expr , '$1'\)，这是replace使用括号内容的标准形式**
 {% endhint %}
 
