@@ -101,7 +101,7 @@ let func = eval.call(null, str);
 func('Jack') // "Hello Jack!"
 ```
 
-12.模板编译
+**12.模板编译**
 
 ```javascript
 //模板编译实例（便于理解模板原理）
@@ -160,4 +160,12 @@ let parse = eval(compile(template));div.innerHTML = parse({ supplies: [ "broom",
 
 第二个也可以写为**template.replace\(expr , '$1'\)，这是replace使用括号内容的标准形式**
 {% endhint %}
+
+**13.标签模板**
+
+标签模板其实不是模板，本质是函数调用的一种特殊形式。“标签”指的就是函数，紧跟在其后的模板字符串就是他的参数。其一个重要应用：过滤HTML字符串，防止用户恶意输入。
+
+```javascript
+let message =  SaferHTML`<p>${sender} has sent you a message.</p>`;function SaferHTML(templateData) {  let s = templateData[0];  for (let i = 1; i < arguments.length; i++) {    let arg = String(arguments[i]);    // Escape special characters in the substitution.    s += arg.replace(/&/g, "&amp;")            .replace(/</g, "&lt;")            .replace(/>/g, "&gt;");    // Don't escape special characters in the template.    s += templateData[i];  }  return s;}
+```
 
