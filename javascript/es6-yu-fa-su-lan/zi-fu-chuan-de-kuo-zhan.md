@@ -166,6 +166,6 @@ let parse = eval(compile(template));div.innerHTML = parse({ supplies: [ "broom",
 标签模板其实不是模板，本质是函数调用的一种特殊形式。“标签”指的就是函数，紧跟在其后的模板字符串就是他的参数。其一个重要应用：过滤HTML字符串，防止用户恶意输入。
 
 ```javascript
-let message =  SaferHTML`<p>${sender} has sent you a message.</p>`;function SaferHTML(templateData) {  let s = templateData[0];  for (let i = 1; i < arguments.length; i++) {    let arg = String(arguments[i]);    // Escape special characters in the substitution.    s += arg.replace(/&/g, "&amp;")            .replace(/</g, "&lt;")            .replace(/>/g, "&gt;");    // Don't escape special characters in the template.    s += templateData[i];  }  return s;}
+/***************************//先熟悉标签模板的参数规则alert`123`// 等同于alert(123)----------------------------let a = 5;let b = 10;tag`Hello ${ a + b } world ${ a * b }`;// 等同于tag(['Hello ', ' world ', ''], 15, 50);***************************/let message =  SaferHTML`<p>${sender} has sent you a message.</p>`;function SaferHTML(templateData) {  let s = templateData[0];  for (let i = 1; i < arguments.length; i++) {    let arg = String(arguments[i]);    // Escape special characters in the substitution.    s += arg.replace(/&/g, "&amp;")            .replace(/</g, "&lt;")            .replace(/>/g, "&gt;");    // Don't escape special characters in the template.    s += templateData[i];  }  return s;}
 ```
 
