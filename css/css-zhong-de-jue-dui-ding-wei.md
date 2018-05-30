@@ -26,7 +26,7 @@ description: 绝对定位元素的宽度计算，以及没有定位值时的表�
 
 ![&#x5B9A;&#x4F4D;&#x524D;&#xFF1A;&#x4E00;&#x884C;&#x663E;&#x793A;&#xFF0C;&#x57FA;&#x7EBF;&#x5BF9;&#x9F50;&#x3002;](../.gitbook/assets/5.png)
 
-![](../.gitbook/assets/6%20%281%29.png)
+![&#x5B9A;&#x4F4D;&#x540E;&#xFF1A;&#x5143;&#x7D20;&#x4E0A;&#x79FB;&#x3002;&#x9876;&#x90E8;&#x5BF9;&#x9F50;](../.gitbook/assets/6%20%281%29.png)
 
 
 
