@@ -183,7 +183,11 @@ String.raw `Hi\u000A!`;             // "Hi\\u000A!"
 
 15.模板字符串的限制
 
-在es6模板字符串中一般会将'\u...' 和 '\x...' 转换为Unicode和十六进制字符串，若不合法就会报错（如：\```\unicode）。es2018 对这个限制做了放松，使得String.raw`\unicode`返回'\\unicode'而不是报错，此外对解析不了的返回undefined，也不报错。``
+在es6模板字符串中一般会将'\u...' 和 '\x...' 转换为Unicode和十六进制字符串，若不合法就会报错（如：\```\unicode）。es2018 对这个限制做了放松，使得String.raw`\unicode`返回'\\unicode'而不是报错，此外对解析不了的返回undefined，也不报错。`` 
+
+{% hint style="danger" %}
+注意，这种对字符串转义的放松，只在标签模板解析字符串时生效，不是标签模板的场合，依然会报错。
+{% endhint %}
 
 
 
