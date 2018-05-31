@@ -23,5 +23,7 @@
     * [数值的扩展](javascript/es6-yu-fa-su-lan/untitled.md)
     * [函数的扩展](javascript/es6-yu-fa-su-lan/han-shu-de-kuo-zhan/README.md)
       * [函数的参数默认值](javascript/es6-yu-fa-su-lan/han-shu-de-kuo-zhan/han-shu-de-can-shu-mo-ren-zhi.md)
+      * [rest 参数](javascript/es6-yu-fa-su-lan/han-shu-de-kuo-zhan/rest-can-shu.md)
+      * [严格模式](javascript/es6-yu-fa-su-lan/han-shu-de-kuo-zhan/untitled.md)
 * [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
 
