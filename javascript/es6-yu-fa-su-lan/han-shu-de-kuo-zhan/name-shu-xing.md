@@ -138,3 +138,88 @@ setTimeout(()=>console.log('s2: ',timer.s2),3100);
 //s2: 0 一直为0
 ```
 
+```javascript
+// 箭头函数转成 ES5 的代码如下
+
+// ES6
+function foo() {
+  setTimeout(() => {
+    console.log('id:', this.id);
+  }, 100);
+}
+
+// ES5
+function foo() {
+  var _this = this;
+
+  setTimeout(function () {
+    console.log('id:', _this.id);
+  }, 100);
+}
+```
+
+```javascript
+//下面代码之中，只有一个this，就是函数foo的this，
+//所以t1、t2、t3都输出同样的结果。
+//因为所有的内层函数都是箭头函数，都没有自己的this，
+//它们的this其实都是最外层foo函数的this
+
+function foo() {
+  return () => {
+    return () => {
+      return () => {
+        console.log('id:', this.id);
+      };
+    };
+  };
+}
+
+var f = foo.call({id: 1});
+
+var t1 = f.call({id: 2})()(); // id: 1
+var t2 = f().call({id: 3})(); // id: 1
+var t3 = f()().call({id: 4}); // id: 1
+```
+
+{% hint style="warning" %}
+1. arguments、super、new.target 这三个变量在箭头函数中都不存在，若在其中使用则指向外层函数对应的变量。
+2. 由于箭头函数没有自己的this（箭头函数中的this指向定义时外层的this），所以也不能用call\(\)/apply\(\)/bind\(\) 这些方法去改变this的指向。
+
+```javascript
+(function() {
+  return [
+    (() => this.x).bind({ x: 'inner' })()
+  ];
+}).call({ x: 'outer' });
+// ['outer']
+```
+{% endhint %}
+
+**嵌套的箭头函数使用方法**
+
+```javascript
+//es5
+function insert(value){
+    return {into:function(array){
+        return {after:function(afterValue){
+            array.splice(array.indexOf(afterValue)+1,0,value);
+            return array;
+        }}
+    }}
+}
+insert(2).into([1,3]).after(1);
+
+//es6
+let insert = (value)=>(
+    {into:(array)=>(
+        {after:(afterValue)=>{
+            array.splice(array.indexOf(afterValue)+1,0,value);
+            return array;
+        }
+    })
+});
+insert(2).into([1,3]).after(1);
+```
+
+
+
