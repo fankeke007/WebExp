@@ -19,5 +19,9 @@
       * [圆括号在解构中的问题](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/yuan-kuo-hao-zai-jie-gou-zhong-de-wen-ti.md)
       * [解构赋值的典型应用](javascript/es6-yu-fa-su-lan/bian-liang-de-jie-gou-fu-zhi/jie-gou-fu-zhi-de-dian-xing-ying-yong.md)
     * [字符串的扩展](javascript/es6-yu-fa-su-lan/zi-fu-chuan-de-kuo-zhan.md)
+    * [正则的扩展](javascript/es6-yu-fa-su-lan/zheng-ze-de-kuo-zhan.md)
+    * [数值的扩展](javascript/es6-yu-fa-su-lan/untitled.md)
+    * [函数的扩展](javascript/es6-yu-fa-su-lan/han-shu-de-kuo-zhan/README.md)
+      * [函数的参数默认值](javascript/es6-yu-fa-su-lan/han-shu-de-kuo-zhan/han-shu-de-can-shu-mo-ren-zhi.md)
 * [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
 
