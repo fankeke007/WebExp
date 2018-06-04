@@ -32,6 +32,7 @@
       * [属性名表达式](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/shu-xing-ming-biao-da-shi.md)
       * [方法的name属性](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/fang-fa-de-name-shu-xing.md)
       * [Object.is\(\) 比较两个值是否相等](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/object.is-bi-jiao-liang-ge-zhi-shi-fou-xiang-deng.md)
+      * [Object.assign\(\) 对象属性拷贝](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/object.assign-dui-xiang-shu-xing-kao-bei.md)
 * [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
 * 计算机基础
   * [lambda 演算](ji-suan-ji-ji-chu/lambda-yan-suan.md)
