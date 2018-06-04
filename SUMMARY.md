@@ -29,7 +29,7 @@
     * [数组](javascript/es6-yu-fa-su-lan/shu-zu.md)
     * 对象的扩展
       * [属性的简洁表示法](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/shu-xing-de-jian-jie-biao-shi-fa.md)
-      * 属性名表达式
+      * [属性名表达式](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/shu-xing-ming-biao-da-shi.md)
 * [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
 * 计算机基础
   * [lambda 演算](ji-suan-ji-ji-chu/lambda-yan-suan.md)
