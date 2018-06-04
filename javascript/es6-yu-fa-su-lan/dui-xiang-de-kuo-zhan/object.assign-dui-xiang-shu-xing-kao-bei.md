@@ -30,5 +30,15 @@ const obj=Object.assign({},v1,v2,v3);
 obj; //{"0":"a","1":"b","2":"c"}
 ```
 
+{% hint style="info" %}
+**Object.assign\(\) 常见用途**
+
+1. 为对象添加属性
+2. 为对象添加方法
+3. 克隆对象
+4. 合并多个对象
+5. 为属性指定默认值
+{% endhint %}
+
 
 
