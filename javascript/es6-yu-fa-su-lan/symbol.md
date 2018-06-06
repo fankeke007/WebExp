@@ -48,3 +48,62 @@ Object.defineProperty(a,mySymbol,{value:'Hello!'});
 a[mySymbol] //hello
 ```
 
+{% hint style="danger" %}
+Symbol 值作为属性名时，不能用点运算符。同理在对象内部，使用Symbol值定义属性时，Symbol值必须放在方括号中。
+
+```javascript
+const mySymbol = Symblo();
+const a = {};
+a.mySymbol = 'Hello!' //新增了一个字符串属性名
+a[Symbol]  //undefined
+a['mySymbol']  //'Hello!'
+```
+
+？？Symbol的内部实现：是否是guid??
+{% endhint %}
+
+{% hint style="info" %}
+用Symbol定义常量可以保证这组常量的值是不相等的
+{% endhint %}
+
+**3.Symbol用例：消除魔术字符串**
+
+魔术字符串是指在代码中多次出现，与代码形成强耦合的某一个具体的字符串或者数值。
+
+```javascript
+funciton getArea(shape,options){
+	let area = 0;
+	switch(shape){
+		case 'Triangle' :
+			area = .5*options.width*options.height;
+			break;
+			/*...more code...*/
+	}
+	return area;
+}
+getArea('Triangle',{width:100,height:100});
+```
+
+“Triangle”即为魔术字符串，多次出现与代码强烈耦合，不利于将来的修改维护。常用的消除魔术字符串的方法是把它写成一个变量：
+
+```javascript
+//shapeType.triangle 属性值更适合用Symbol来表示，
+//能保障其不与其他shapeType属性值冲突
+const shapeType = {
+	triangle :'Triangle'
+}
+funciton getArea(shape,options){
+	let area = 0;
+	switch(shape){
+		case shapeType.triangle :
+			area = .5*options.width*options.height;
+			break;
+			/*...more code...*/
+	}
+	return area;
+}
+getArea(shapeType.triangle,{width:100,height:100});
+```
+
+
+
