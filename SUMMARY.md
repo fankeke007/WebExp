@@ -1,11 +1,11 @@
 # Table of contents
 
 * [概述](README.md)
-* HTML
+* [HTML](html/README.md)
   * [元素在文档中尺寸与位置相关信息汇总](html/yuan-su-zai-wen-dang-zhong-de-wei-zhi-xiang-guan-xin-xi-hui-zong.md)
-* CSS
+* [CSS](css/README.md)
   * [CSS中的绝对定位](css/css-zhong-de-jue-dui-ding-wei.md)
-* JavaScript
+* [JavaScript](javascript/README.md)
   * [es6 语法速览](javascript/es6-yu-fa-su-lan/README.md)
     * [let](javascript/es6-yu-fa-su-lan/let.md)
     * [const](javascript/es6-yu-fa-su-lan/const.md)
@@ -27,9 +27,8 @@
       * [严格模式](javascript/es6-yu-fa-su-lan/han-shu-de-kuo-zhan/untitled.md)
       * [箭头函数](javascript/es6-yu-fa-su-lan/han-shu-de-kuo-zhan/name-shu-xing.md)
     * [数组](javascript/es6-yu-fa-su-lan/shu-zu.md)
-    * 对象的扩展
-      * [属性的简洁表示法](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/shu-xing-de-jian-jie-biao-shi-fa/README.md)
-        * [对象的扩展运算符](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/shu-xing-de-jian-jie-biao-shi-fa/dui-xiang-de-kuo-zhan-yun-suan-fu.md)
+    * [对象的扩展](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/README.md)
+      * [属性的简洁表示法](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/shu-xing-de-jian-jie-biao-shi-fa.md)
       * [属性名表达式](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/shu-xing-ming-biao-da-shi.md)
       * [方法的name属性](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/fang-fa-de-name-shu-xing.md)
       * [Object.is\(\) 比较两个值是否相等](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/object.is-bi-jiao-liang-ge-zhi-shi-fou-xiang-deng.md)
@@ -39,7 +38,8 @@
       * [原型相关](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/yuan-xing-xiang-guan.md)
       * [super关键字](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/super-guan-jian-zi.md)
       * [Object.keys/Object.values/Object.entries](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/object.keys-object.values-object.entries.md)
+      * [对象的扩展运算符](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/dui-xiang-de-kuo-zhan-yun-suan-fu.md)
 * [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
-* 计算机基础
+* [计算机基础](ji-suan-ji-ji-chu/README.md)
   * [lambda 演算](ji-suan-ji-ji-chu/lambda-yan-suan.md)
 
