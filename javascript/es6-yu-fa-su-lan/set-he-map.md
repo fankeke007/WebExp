@@ -219,5 +219,10 @@ Map 实例的属性与方法
 3. Map &lt;=&gt; JSON
 {% endhint %}
 
+**4.WeakMap**
 
+WeakMap与Map的两点区别：
+
+1. WeakMap只接受对象作为键名（null除外），不接受其他类型的值作为键名
+2. WeakMap的键名所指向的对象，不计入垃圾回收机制
 
