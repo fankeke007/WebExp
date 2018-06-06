@@ -166,3 +166,58 @@ m.delete(o) //true
 m.has(o)  //false
 ```
 
+作为构造函数Map，可以接受一个数组（或任何具有Iterator接口且每一个成员都是一个双元素数组的数据结构）作为参数，该数组的成员是一个个表示键值对的数组。
+
+```javascript
+const map = New Map([
+    ['name','张三'],
+    ['title','Author']
+]);
+map.size // 2
+map.has('name') //true
+map.get('titile') //'Author'
+
+//等同于
+const map = new Map();
+const items = [
+    ['name','张三'],
+    ['title','Author']
+];
+items.forEach(
+    ([key,value])=>map.set(key,value);
+);
+```
+
+{% hint style="info" %}
+Map 实例的属性与方法
+
+属性：
+
+* size：返回Map结构的成员总数
+
+操作方法：
+
+* set\(key,value\)：设置键名key对应的值为value
+* get\(key,value\)：读取key对应的键值
+* has\(key\)
+* delete\(key\)
+* clear\(\)
+
+遍历方法：\(**Map的遍历顺序就是插入顺序**\)
+
+* keys\(\)
+* values\(\)
+* entries\(\)    **//Map 结构默认遍历器接口**
+* forEach\(\)  **//可传入第二个参数用来绑定this**
+{% endhint %}
+
+{% hint style="info" %}
+**与其他数据结构的相互转换：\(需熟练\)**
+
+1. Map  &lt;=&gt; Array
+2. Map  &lt;=&gt; Object
+3. Map &lt;=&gt; JSON
+{% endhint %}
+
+
+
