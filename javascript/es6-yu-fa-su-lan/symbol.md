@@ -105,5 +105,73 @@ funciton getArea(shape,options){
 getArea(shapeType.triangle,{width:100,height:100});
 ```
 
+**4.Symbol属性名遍历**：**Object.getOwnPropertySymbols\(\)**
+
+```javascript
+const obj = {};
+let a = Symbol('a');
+let b = Symbol('b');
+
+obj[a]='Hello';
+obj[b]='es6'；
+
+const objectSymbols = Object.getOwnPropertySymbols(obj);
+
+objectSymbols; //[Symbol(a),Symbol(b)]
+```
+
+{% hint style="info" %}
+Reflect.ownKeys\(\)方法可以返回所有类型的键名，包括常规键名和Symbol键名。
+{% endhint %}
+
+**5.Symbol.for\(\)/Symbol.keyFor\(\)**
+
+有时我们希望使用同一个Symbol值，Symbol.for方法可以做到这一点。它接受一个字符串作为参数，然后搜索有没有以该参数作为名称的Symbol值，若有，就返回这个Symbol值，否则，就新建一个并返回一个以字符串为名称的Symbol值。
+
+```javascript
+let s1 = Symbol.for('foo');
+let s2 = Symbol.for('foo');
+
+s1 === s2; // true
+```
+
+Symbol.for 与 Symbol 这两种写法都会生成新的Symbol。它们的区别是，前者会被登记在全局环境中供搜索，后者不会。
+
+Symbol.keyFor 方法返回一个已登记的Symbol类型值的key。
+
+```javascript
+let s1 = Symbol.for('foo');
+Symbol.keyFor(s1); // 'foo'
+
+let s2 = Symbol('bar');
+Symbol.keyFor(s2);//undefined
+```
+
+{% hint style="info" %}
+Symbol.for为Symbol值登记的名字，是全局环境的，可以在不同的iframe或service worker 中取到同一个值。
+{% endhint %}
+
+**6.实例：模块的Singleton模式（单例模式）**
+
+（文中使用nodejs 的模块文件多次加载返回同一个对象的例子，不够严谨）
+
+**7.内置的Symbol值**
+
+除了自己定义使用Symbol值以外，es6还提供了11个内置的Symbol值，指向语言内部使用的方法。\(了解每一个属性使用场合\)
+
+{% hint style="info" %}
+1. Symbol.hasInstance
+2. Symbol.isConcatSpreadable
+3. Symbol.species
+4. Symbol.match
+5. Symbol.replace
+6. Symbol.search
+7. Symbol.split
+8. Symbol.iterator
+9. Symbol.toPrimitive
+10. Symbol.toStringTag
+11. Symbol.unscopables
+{% endhint %}
+
 
 
