@@ -94,6 +94,7 @@ function print(){
 }
 observe(print);
 person.name = '李四';
+//李四，20
 ```
 
 
