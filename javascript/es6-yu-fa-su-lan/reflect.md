@@ -55,13 +55,46 @@ Reflect.apply(Math.floor, undefined, [1.75]) // 1
 ```
 
 {% hint style="info" %}
-Reflect 静态方法汇总
+**Reflect 静态方法汇总 \(**与Proxy一一对应**\)**
 
 1. **Reflect.apply\(target , thisArg , args\)**
 2. **Reflect.construct\(target,args\)**
-3. Reflect.get\(target,name,receiver\)
-4. Reflect.set\(target,name,value,reciver\)
-5. Reflect.defineProperty\(target,name,desc\)
-6. 
+3. **Reflect.get\(target,name,receiver\)**
+4. **Reflect.set\(target,name,value,reciver\)**
+5. **Reflect.defineProperty\(target,name,desc\)**
+6. **Reflect.deleteProperty\(target, name\)**
+7. **Reflect.has\(target, name\)**
+8. **Reflect.ownKeys\(target\)**
+9. **Reflect.isExtensible\(target\)**
+10. **Reflect.preventExtensions\(target\)**
+11. **Reflect.getOwnPropertyDescriptor\(target, name\)**
+12. **Reflect.getPrototypeOf\(target\)**
+13. **Reflect.setPrototypeOf\(target, prototype\)**
 {% endhint %}
+
+实例：使用Proxy实现观察者模式
+
+```javascript
+const queuedObservers = new Set();
+const observe = fn => queuedObservers.add(fn);
+const observable = obj => new Proxy(obj,{set});
+function set(target,key,value,receiver){
+	const result = Reflect.set(target,key,value,receiver);
+	queuedObservers.forEach(observer=>observer());
+	return result;
+}
+
+const person = observable({
+	name:'张三',
+	age:'20'
+});
+
+function print(){
+	console.log(`${person.name},${person.age}`);
+}
+observe(print);
+person.name = '李四';
+```
+
+
 
