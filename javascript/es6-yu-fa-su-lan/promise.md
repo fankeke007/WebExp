@@ -66,7 +66,7 @@ const getJSON = function(url){
             if(this.status === 200){
                 resolve(this.response);
             }else{
-                reject(new Error('this.statusText'));
+                reject(new Error(this.statusText));
             }
         };
         const client = new XMLHttpRequest();
