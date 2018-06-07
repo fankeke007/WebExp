@@ -41,6 +41,7 @@
       * [对象的扩展运算符](javascript/es6-yu-fa-su-lan/dui-xiang-de-kuo-zhan/dui-xiang-de-kuo-zhan-yun-suan-fu.md)
     * [Symbol](javascript/es6-yu-fa-su-lan/symbol.md)
     * [Set 和 Map](javascript/es6-yu-fa-su-lan/set-he-map.md)
+    * [Proxy（代理器）](javascript/es6-yu-fa-su-lan/proxy-dai-li-qi.md)
 * [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
 * [计算机基础](ji-suan-ji-ji-chu/README.md)
   * [lambda 演算](ji-suan-ji-ji-chu/lambda-yan-suan.md)
