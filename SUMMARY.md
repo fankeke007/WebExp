@@ -44,6 +44,7 @@
     * [Proxy（代理器）](javascript/es6-yu-fa-su-lan/proxy-dai-li-qi.md)
     * [Reflect](javascript/es6-yu-fa-su-lan/reflect.md)
     * [Promise](javascript/es6-yu-fa-su-lan/promise.md)
+    * [Generator](javascript/es6-yu-fa-su-lan/generator.md)
 * [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
 * [计算机基础](ji-suan-ji-ji-chu/README.md)
   * [lambda 演算](ji-suan-ji-ji-chu/lambda-yan-suan.md)

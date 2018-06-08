@@ -56,6 +56,7 @@ function loadImageAsync(url){
 ```
 
 ```javascript
+//没调试通，稍后尝试
 //Promise 实现 Ajax 的例子
 const getJSON = function(url){
     const promise = new Promise(function(resolve,reject){
@@ -78,10 +79,12 @@ const getJSON = function(url){
     });
     return promise;
 };
-getJSON('').then(function(){
+getJSON('http://testapi.wisq.cn/basefunction/index?type=1&community_id=1503').then(function(){
     console.log('Contents: '+json);
 },function(error){
     console.log('出错了',error);
 });
 ```
+
+
 
