@@ -55,5 +55,58 @@ Object.assign(Point.prototype,{
 
 类和模块内部默认就是严格模式。即只要代码写在类中或者模块之中，就只有严格模式可用。（今后写代码也尽量使用严格模式，因为未来的代码将都是运行在严格模式之中）（传送门：[严格模式与普通模式的区别](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode)）
 
+3.constructor
+
+constructor 方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。一个类必须有constructor方法，若没有显示定义，一个空的constructor方法会被默认添加。constructor方法默认返回实例对象（即：this），完全可以指定返回另外一个实例对象。
+
+```javascript
+//返回一个全新对象，到时返回结果不是Foo的实例
+class Foo {
+    constructor(){
+        return Object.create(null); 
+    }
+}
+```
+
+类必须使用new调用，否则会报错。这是它跟普通构造函数的一个主要区别，后者不用new也可以调用。
+
+4.类的实例对象
+
+实例的属性除非显示定义在其本身（即定义在this对象上），否则都定义在原型上（即定义在class上）。通过实例的\_\_proto\_\_属性可以获得实例的原型对象，对其进行修改将会影响该类的所有实例。
+
+5.Class 表达式
+
+类也可以像函数一样使用表达式的形式定义。
+
+下面代码使用表达式定义了一个类。需要注意的是，**这个类的名字是MyClass而不是Me，Me只在Class的内部代码可用，指代当前类**。若类的内部没有使用Me的话，则可以省略Me。
+
+```javascript
+const MyClass = class Me{
+    getClassName(){
+        return Me.name;
+    }
+}
+```
+
+采用class表达式可以写出立即执行的Class
+
+```javascript
+let person = new class {
+    constructor(name){
+        this.name = name;
+    }
+    sayName(){
+        console.log(this.name);
+    }
+}('haha')
+person.say();//'haha'
+```
+
+6.**类不存在变量提升**
+
+**注意：这一点与es5 完全不同**。
+
+**7.私有方法和私有属性**
+
 
 
