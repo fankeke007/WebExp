@@ -41,5 +41,70 @@ async funtcion asyncPrint(value,ms){
 asyncPrint('haha',1000)
 ```
 
+async 函数的多种写法形式：
+
+```javascript
+//函数声明
+async function foo{};
+//函数表达式
+const foo = async function(){};
+//对象的方法
+let obj = {async foo(){}};
+obj.foo().then(...);
+//Class 的方法名
+class Storage{
+    constructor(){
+        this.cachePromise = caches.open('avastars');
+    }
+    async getAvatar(name){
+        const cache = await this.cachePromise;
+        return cache.match(`/avastars/$(name.jpg)`);
+    }
+}
+const storage = new Storage();
+storage.getAvatar('jake').then(...);
+//箭头函数
+const foo = async ()=>{};
+```
+
+3.语法
+
+（1）**async** 函数内部的 **return**语句**返回的值**，会成为**then方法回调函数的参数**。
+
+```javascript
+async function f(){
+    return 'hello world';
+};
+f().then(v=>console.log(v))
+//"hello world"
+```
+
+（2）**async** 函数**内部抛出错误**，会导致**返回的Promise对象变为reject 状态**。抛出的错误对象会被**catch**方法回调函数接收到。
+
+```javascript
+async function f(){
+    throw new Error('出错了');
+}
+f().then(
+    v => console.log(v),
+    e => console.log(e)
+);
+//Error:'出错了'
+```
+
+（3）async 函数返回的**Promise对象**，必须等到内部**所有 await 命令后面的Promise 对象执行完**，才会发生**状态改变**，除非遇到 **return 语句或者抛出错误**。
+
+```javascript
+async function getTitle(url){
+    let response = await fetch(url);
+    let html = await response.text();
+    return html.match(/<title>([\s\S]+)</title>/i)[1];
+}
+getTitle('https://tc39.github.io/ecma262/').then(sonsole.log);
+
+//函数getTitle内部有三个操作：抓取网页、取出文本、匹配页面标题
+//只有这三个操作全部完成，才会执行then方法里面的console.log
+```
+
 
 
