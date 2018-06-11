@@ -1,5 +1,7 @@
 # async/await
 
+未完，es2018 以后的异步遍历器
+
 **1.概述**
 
 es2017 标准引入 async 函数，使得异步操作变得更加方便。async 实质上是 Generator 函数的语法糖（类似Class是语法糖一样）。
@@ -92,7 +94,7 @@ f().then(
 //Error:'出错了'
 ```
 
-（3）async 函数返回的**Promise对象**，必须等到内部**所有 await 命令后面的Promise 对象执行完**，才会发生**状态改变**，除非遇到 **return 语句或者抛出错误**。
+（3）**async** 函数返回的**Promise对象**，必须等到内部**所有 await 命令后面的Promise 对象执行完**，才会发生**状态改变**，除非遇到 **return 语句或者抛出错误**。
 
 ```javascript
 async function getTitle(url){
@@ -106,5 +108,76 @@ getTitle('https://tc39.github.io/ecma262/').then(sonsole.log);
 //只有这三个操作全部完成，才会执行then方法里面的console.log
 ```
 
+（4）**await 命令**：
 
+* 正常情况下，await后面是一个Promise对象，若不是，会被立即**转成**一个resolve的Promise对象。
+* await后面的Promise对象若变为reject状态，则**reject的参数会被catch方法的回调函数接收到**。
+* **只要一个await语句后面的Promise变为reject**，那么**整个async函数会中断执行。**
+* 若我们希望即使前一个异步失败，也不要中断后面的异步操作。这是可以将第一个await放在try...catch 结构里面，这样不管这个异步是否成功，第二个await都会执行。另一种方法是await后面的Promise对象跟一个catch方法，处理前面可能出现的错误。
+
+```javascript
+//await后面非Promise会被转成一个resolve的Promise
+async function f(){
+    return await 123;
+};
+f().then(v=>console.log(v));
+//123
+```
+
+```javascript
+//await 后面的Promise变为reject状态，会中断后续await执行
+//reject参数会被async返回Promise的catch方法回调函数捕获
+async function f(){
+    await Promise.reject('出错了');
+    await Promise.resolve('hello world'); //不会执行
+};
+f().then(v=>console.log(v)).catch(e=>console.log(e));
+```
+
+```javascript
+//要想前面await失败不影响后面的await执行
+//法一：将前面await置于try...catch语句
+async function f(){
+    try{
+        await Promise.reject('something wrong');
+    }catch(e){
+        console.log(e);
+    }
+    return await Promise.resolve('hello world');
+};
+f().then(v=>console.log(v));
+
+//法二：可能会失败的await后面的Promise对象跟一个catch方法处理（拦截）错误
+async function f(){
+    await Promise.reject('something wrong').catch(e=>console.log(e));
+    return await Promise.resolve('hello world');
+};
+f().then(v=>console.log(v));
+```
+
+{% hint style="warning" %}
+使用注意点
+
+1. await后面的Promise对象，运行结果可能是rejected，所以最好把 await  命令放在try...catch代码块中（上面第（4）中提到的两种犯法皆可）
+2. 多个await命令后面异步操作若不存在继发关系，最好让他们同时出发。
+3. await命令只能用在async函数之中，若用在普通函数会报错。
+
+```text
+//多个并发await
+let foo = await getFoo();
+let bar = await getBar();
+//getFoo和getBar是两个独立的异步操作，被写成继发关系这样会比较耗时，
+//因为只有getFoo执行完后，才会执行getBar
+
+//同时触发他们会提升效率
+//法一：Promise.all()
+let [foo,bar] = await Promise.all([getFoo,getBar]);
+
+//法二：
+let fooPromise = getFoo();
+let barPromise = getBar();
+let foo = await fooPromise;
+let bar = await barPromise;
+```
+{% endhint %}
 
