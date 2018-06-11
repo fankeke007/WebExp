@@ -29,7 +29,11 @@ function timeout(ms){
 //所以上述也可以写成如下：
 /****************
 async funciton timeout(ms){
-	await ***
+	await new Promise((resolve)=>{
+		setTimeout(resolve,ms);
+	});
+}
+****************/
 async funtcion asyncPrint(value,ms){
 	await timeout(ms);
 	console.log(value);
