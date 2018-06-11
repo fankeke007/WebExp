@@ -25,7 +25,11 @@ function timeout(ms){
 		setTimeout(resolve,ms);
 	});
 }
-//async 函数返回值是Promise对象，可以作为await命令的
+//async 函数返回值是Promise对象，可以作为await命令的参数
+//所以上述也可以写成如下：
+/****************
+async funciton timeout(ms){
+	await ***
 async funtcion asyncPrint(value,ms){
 	await timeout(ms);
 	console.log(value);
