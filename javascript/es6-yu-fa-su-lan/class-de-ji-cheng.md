@@ -132,7 +132,7 @@ c.__proto__ === Object.prototype; //true
 //因为class A 实质是构造函数 function A(){} 的语法糖，故A实质上是Function的实例
 A.__proto__ === Funciton.prototype; //true
 
-//验证3 (无法验证)
+//验证3 (暂无法验证)
 class A{};
 class B extends A{};
 
