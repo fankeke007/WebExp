@@ -47,6 +47,7 @@
     * [Generator](javascript/es6-yu-fa-su-lan/generator.md)
     * [async/await](javascript/es6-yu-fa-su-lan/async-await.md)
     * [Class 基本语法](javascript/es6-yu-fa-su-lan/class-ji-ben-yu-fa.md)
+    * [Class 的继承](javascript/es6-yu-fa-su-lan/class-de-ji-cheng.md)
 * [gitBook 支持的特性示例](gitbook-zhi-chi-de-te-xing-shi-li.md)
 * [计算机基础](ji-suan-ji-ji-chu/README.md)
   * [lambda 演算](ji-suan-ji-ji-chu/lambda-yan-suan.md)
