@@ -117,10 +117,24 @@ const b = new B();
 
 Object.getPrototypeOf\(new Foobar\(\)\) 和 Foobar.prototype指向着同一个对象。
 
-总结：实例的原型对象等于创建实例的构造函数的（prototype）原型属性
+**总结：实例的原型对象等于创建实例的构造函数的（prototype）原型属性**
 {% endhint %}
 
+验证以上结论：
 
+```javascript
+//验证1
+//c 是对象的实例，其原型对象等于其构造函数（Object）的原型属性Object.prototype
+var c = {};
+c.__proto__ === Object.prototype; //true
 
+//验证2
+//因为class A 实质是构造函数 function A(){} 的语法糖，故A实质上是Function的实例
+A.__proto__ === Funciton.prototype; //true
 
+//验证3 (无法验证)
+class A{};
+class B extends A{};
+
+```
 
