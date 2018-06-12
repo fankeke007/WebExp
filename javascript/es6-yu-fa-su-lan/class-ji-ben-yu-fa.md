@@ -110,12 +110,12 @@ person.say();//'haha'
 
 以下划线命名的方式区分（如\_bar），不能做到严格意义上的“私有”，外界还是能访问。es6 中可以通过Symbol来模拟私有属性。es2018 有一个提案使用 \#号前缀表示私有属性或方法。
 
-8.this指向
+**8.this指向**
 
 类方法内部若有this，默认指向类的实例。**但是，必须非常小心，一旦单独使用该方法，很可能报错**。即会出现this丢失的情况。
 
 {% hint style="info" %}
-防止this丢失的几种方法
+**单独使用类方法时防止this丢失的几种方法**
 
 1. 通过bind显示绑定
 2. 使用箭头函数
@@ -159,4 +159,112 @@ function selfish(target){
 const logger = selfish(new Logger());
 ```
 {% endhint %}
+
+**9.name属性**
+
+name属性总是返回紧跟在class关键字后面的类名。
+
+**10.Class的取值（getter）与存值（setter）函数**
+
+**与es5 一样，在“类”的内部可以使用get和set关键字，对某个属性设置存值和取值函数，拦截该属性的存取行为**。
+
+```javascript
+class MyClass{
+    constructor(){}
+    get prop(){
+        return 'getter';
+    }
+    set prop(value){
+        console.log('setter: '+value);
+    }
+}
+let inst = new MyClass();
+inst.prop = 123; //setter: 123
+inst.prop; //'getter'
+```
+
+**11.Class 的Generator方法**
+
+若类的某个方法之前有 \* 号，就表示该方法是一个Generator函数。
+
+下面代码中，Foo类的Symbol.iterator方法前有一个星号，表示该方法是一个Generator函数。Symbol.iterator 方法返回一个Foo类的默认遍历器，for...of循环会自动调用这个遍历器。
+
+```javascript
+class Foo{
+    constructor(...args){
+        this.args = args;
+    }
+    *[Symbol.iterator](){
+        for (let arg of this.args){
+            yield arg;
+        }
+    }
+}
+for(let x of new Foo('hello','fankeke')){
+    console.log(x);
+}
+//hello
+//fankeke
+```
+
+**12.Class 的静态方法**
+
+类相当于实例的原型，所有在类中定义的方法都会被实例继承。若在一个方法前加上static关键字，则该方法不会被实例继承，需要直接同过类来调用，这就称为静态方法。若静态方法包含this关键字，这个this指的是类，而不是实例。（静态方法可以与非静态方法重名）。父类的静态方法可以被子类继承。静态方法也可以从super对象上调用。
+
+{% hint style="info" %}
+Class 的 static 静态方法使用注意事项汇总
+
+1. 静态方法只能通过类直接调用，不能通过实例调用
+2. 静态方法可以被子类继承
+3. 子类中可以通过super调用父类静态方法
+{% endhint %}
+
+**13.Class 的静态属性和实例属性**
+
+静态属性指的是Class本身的属性，即Class.propName，而不是定义在实例对象（this）上的属性。目前只能通过Foo.prop的形式定义一个Foo类的静态属性prop。es6 明确规定，Class 内部只有静态方法，没有静态属性。
+
+目前有一个提案对静态属性和实例属性都规定了新的写法。
+
+```javascript
+//以下各浏览器厂商及Babel都还未实现
+
+//类的实例属性可以用等式写入类的定义之中，之前定义实例属性只能写在constructor之中
+class MyClass{
+    myProp = 112;
+    constructor(){
+        console.log(this.myProp);
+    }
+}
+
+//类的静态属性只需在前面实例的静态属性的基础上加上static关键字就可以了
+class MyClass{
+    static myProp = 112;
+}
+
+//新的提案的语法在语义上更直接
+```
+
+**14.new.target 属性**
+
+new是从构造函数生成实例对象的命令。es6 为new 命令引入一个**new.target** 属性，**该属性一般用在构造函数之中，返回new命令作用于的那个构造函数**。若构造函数不是通过new命令调用的，new.target会返回undefiend，因此这个属性可以用来确定构造函数是怎么调用的。
+
+Class 内部调用new.target ，返回当前Class。子类继承父类是，new.target 会返回子类。利用这个特点可以写出不能独立使用，不需继承后才能使用的类。
+
+```javascript
+class Shape{
+    constructor(){
+        if(new.target === Shape){
+            throw new Error('本类不能实例化');
+        }
+    }
+}
+class Rectangle extends Shape{
+    constructor(length,width){
+        super();
+        //...
+    }
+}
+var x = new Shape(); // 报错 
+var y = new Rectangle(3, 4); // 正确
+```
 
