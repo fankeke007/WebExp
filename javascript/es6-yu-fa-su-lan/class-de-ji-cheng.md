@@ -117,7 +117,7 @@ const b = new B();
 
 Object.getPrototypeOf\(new Foobar\(\)\) 和 Foobar.prototype指向着同一个对象。
 
-**总结：实例的原型对象等于创建实例的构造函数的（prototype）原型属性**
+**总结：实例的原型对象等于创建实例的构造函数的（prototype）原型属性；**
 {% endhint %}
 
 验证以上结论：
@@ -132,9 +132,98 @@ c.__proto__ === Object.prototype; //true
 //因为class A 实质是构造函数 function A(){} 的语法糖，故A实质上是Function的实例
 A.__proto__ === Funciton.prototype; //true
 
-//验证3 (暂无法验证)
+//验证3
 class A{};
 class B extends A{};
+
+//因为class B extends A{};
+//实质上是：
+//Object.setPrototypeOf(B,A)
+//Object.setPrototypeOf(B.prototype,A.prototype)
+B.__proto__ === A;
+B.prototype.__proto__ === A.prototype
+```
+
+**extends 的继承目标：**理清不同继承目标下的**子类原型对象**和**子类prototype属性的原型对象**，有利于理解继承的中的相关概念。
+
+{% hint style="info" %}
+**extends 继承目标的四种类型**：（function（class或构造函数，实质都为构造函数）、Object、无继承、null）
+
+1. class（function）：【class  B extends A】只要A是有一个prototype属性的函数，就能被B继承。由于函数都有prototype属性（除了Function.prototype函数）。
+2. 【class A extends **Object**】：A.\_\_proto\_\_ === Object ;                             A.prototype.\_\_proto\_\_ === Object.prototype
+3. 【class A{ }】：A.\_\_proto\_\_ === Function.prototype; A.prototype.\_\_proto\_\_ === Object.prototype
+4. 【class A extends **null**】：A.\_\_proto\_\_ === Function.prototype； A.prototype.\_\_proto\_\_ === **undefiend**;
+{% endhint %}
+
+**实例的\_\_proto\_\_属性：**子类实例的\_\_proto\_\_属性的\_\_proto\_\_，指向父类实例的\_\_proto\_\_属性。即：子类的原型的原型与父类的原型相同。
+
+```javascript
+//验证上述结论
+class A{};
+class B extends A{};
+let b = new B();
+b.__proto__ === B.prototype;//true
+b.__proto__.__proto__ === B.prototype.__proto__;
+let a = new A();
+a.__proto__ === A.prototype;
+//又因为
+B.prototype.__proto__===A.prototype
+//所以
+b.__proto__.__proto__===a.__proto__;//true
+```
+
+5.原生构造函数继承
+
+原生构造函数是指语言内置的构造函数，通常用来生成数据结构。js原生构造函数由如下：
+
+1. Boolean\(\)
+2. Numbet\(\)
+3. String\(\)
+4. Array\(\)
+5. Date\(\)
+6. Function\(\)
+7. RegExp\(\)
+8. Error\(\)
+9. Object\(\)
+
+es5 之前不允许继承原生构造函数，但是es6中允许继承原生构造函数定义子类。这种区别源于es5 和 es6 继承方式的不同。
+
+注意：继承Object的子类有一个行为差异，无法通过super\(\)方法向父类Object传参。这是因为es6改变了Object构造函数的行为，一旦发现Object方法不是通过new Object\(\)这种形式调用，es6规定Object构造函数会忽略掉参数。
+
+6.Mixin 模式的实现
+
+Mixin指的是多个对象合成一个新的对象，新的对象具有各个组成成员的接口。
+
+```javascript
+//1.利用解构赋值简单实现
+const a = {
+    a:'a'
+};
+const b = {
+    b:'b'
+};
+const c={...a,...b};
+
+//2.更完备的实现
+function mix(...minxins){
+    class Mix{};
+    for (let mixin of minxins){
+        copyProperties(Mix,minxin);//拷贝实例的属性
+        copyProperties(Mix.prototype,minxin.prototype);//靠别原型属性
+    }
+    return Mix;
+}
+function copyProperties(target,source){
+    for(let key of Reflect.ownKeys(source)){
+        if(key !== 'constructor'
+       &&  key !== 'prototype'
+       &&  key !== 'name'
+        ){
+            let desc = Object.getOwnPropertyDescriptor(source,key);
+            Object.defineProperty(target,key,desc);
+        }
+    }
+}
 
 ```
 
