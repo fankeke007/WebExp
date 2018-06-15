@@ -12,10 +12,12 @@
 
 ;(function () {
     'use strict';
-
+    //es5 Date.now() hack.作用生成时间戳
     if (!Date.now)
         Date.now = function () { return new Date().getTime(); };
-
+    
+    //requestAnimationFrame & cacelAnimationFrame
+    //1.
     var vendors = ['webkit', 'moz'];
     for (var i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
         var vp = vendors[i];
