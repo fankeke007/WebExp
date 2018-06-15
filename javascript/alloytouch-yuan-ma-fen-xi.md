@@ -17,7 +17,8 @@
         Date.now = function () { return new Date().getTime(); };
     
     //requestAnimationFrame & cacelAnimationFrame
-    //1.
+    //1.添加浏览器厂商前缀
+    //2.对不支持该方法的浏览器（setTimeout）作回退处理
     var vendors = ['webkit', 'moz'];
     for (var i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
         var vp = vendors[i];
