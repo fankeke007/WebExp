@@ -102,7 +102,7 @@ async function getTitle(url){
     let html = await response.text();
     return html.match(/<title>([\s\S]+)</title>/i)[1];
 }
-getTitle('https://tc39.github.io/ecma262/').then(sonsole.log);
+getTitle('').then(sonsole.log);
 
 //函数getTitle内部有三个操作：抓取网页、取出文本、匹配页面标题
 //只有这三个操作全部完成，才会执行then方法里面的console.log

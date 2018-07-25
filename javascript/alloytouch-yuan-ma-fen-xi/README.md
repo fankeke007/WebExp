@@ -1,3 +1,7 @@
+---
+description: （ing）
+---
+
 # AlloyTouch 源码分析
 
 {% code-tabs %}
@@ -26,6 +30,7 @@
         window.cancelAnimationFrame = (window[vp + 'CancelAnimationFrame']
                                    || window[vp + 'CancelRequestAnimationFrame']);
     }
+    //IOS6 hack 处理
     if (/iP(ad|hone|od).*OS 6/.test(window.navigator.userAgent) // iOS6 is buggy
         || !window.requestAnimationFrame || !window.cancelAnimationFrame) {
         var lastTime = 0;
@@ -40,11 +45,11 @@
 }());
 
 (function () {
-
+    //事件绑定简写
     function bind(element, type, callback) {
         element.addEventListener(type, callback, false);
     }
-
+    
     function ease(x) {
         return Math.sqrt(1 - Math.pow(x - 1, 2));
     }
@@ -52,7 +57,7 @@
     function reverseEase(y) {
         return 1 - Math.sqrt(1 - y * y);
     }
-
+    //?
     function preventDefaultTest(el, exceptions) {
         for (var i in exceptions) {
             if (exceptions[i].test(el[i])) {

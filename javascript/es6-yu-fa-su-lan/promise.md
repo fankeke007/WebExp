@@ -79,7 +79,7 @@ const getJSON = function(url){
     });
     return promise;
 };
-getJSON('http://testapi.wisq.cn/basefunction/index?type=1&community_id=1503').then(function(){
+getJSON('').then(function(){
     console.log('Contents: '+json);
 },function(error){
     console.log('出错了',error);
