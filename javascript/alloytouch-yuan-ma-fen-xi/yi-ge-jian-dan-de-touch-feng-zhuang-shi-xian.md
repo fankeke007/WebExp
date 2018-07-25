@@ -1,6 +1,6 @@
 # 一个简单的touch封装实现
 
-新版本gitbook 代码粘贴有bug。贴上旧版链接。
+
 
 {% code-tabs %}
 {% code-tabs-item title="js" %}
@@ -213,8 +213,9 @@
 				this.options.swipe(event, direction);
 			}
 
-			if (this.options.swipeStatus)
+			if (this.options.swipeStatus){
 				this.options.swipeStatus(event, this.phase, direction || null, distance || 0);
+			}
 		},
 
 		init : function(){
